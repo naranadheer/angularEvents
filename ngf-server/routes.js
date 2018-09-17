@@ -44,7 +44,7 @@ module.exports = function(app) {
     res.sendFile(path.resolve(__dirname + '/../../dist/index.html'));
   });
   app.get('/', function(req, res) {
-    console.log(path.resolve(__dirname + '/../dist/index.html' ));
+    console.log(path.resolve(__dirname + '/dist/index.html' ));
     res.sendFile(path.resolve(__dirname + '/../dist/index.html'));
   });
   
