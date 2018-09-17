@@ -35,17 +35,18 @@ module.exports = function(app) {
   });
 
   app.get('/events/*', function(req, res) {
-    res.sendFile(path.resolve(__dirname + '/../../dist/index.html'));
+
+    console.log(path.resolve(__dirname + '/dist/index.html'))
+    res.sendFile(path.resolve(__dirname + '/dist/index.html'));
   });
   app.get('/user/*', function(req, res) {
-    res.sendFile(path.resolve(__dirname + '/../../dist/index.html'));
+    res.sendFile(path.resolve(__dirname + '/dist/index.html'));
   });
   app.get('/404', function(req, res) {
-    res.sendFile(path.resolve(__dirname + '/../../dist/index.html'));
+    res.sendFile(path.resolve(__dirname + '/dist/index.html'));
   });
   app.get('/', function(req, res) {
-    console.log(path.resolve(__dirname + '/dist/index.html' ));
-    res.sendFile(path.resolve(__dirname + '/../dist/index.html'));
+    res.sendFile(path.resolve(__dirname + '/dist/index.html'));
   });
   
   app.get('*', function(req, res) {
