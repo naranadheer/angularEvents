@@ -23,6 +23,6 @@ module.exports = function(app) {
   
   app.use(express.static(rootPath));
   console.log(rootPath)
-  app.use(express.static(rootPath + '/dist'));
+  app.use(express.static(rootPath + '/publicweb'));
   app.use('/events', express.static(rootPath));
 }

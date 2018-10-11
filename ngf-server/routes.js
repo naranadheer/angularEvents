@@ -26,6 +26,8 @@ module.exports = function(app) {
     res.end();
   });
   
+  var rootPath = path.normalize(__dirname );
+  
   app.get('/app/*', function(req, res) {
     res.sendStatus(404);
   });
@@ -36,17 +38,17 @@ module.exports = function(app) {
 
   app.get('/events/*', function(req, res) {
 
-    console.log(path.resolve(__dirname + '/dist/index.html'))
-    res.sendFile(path.resolve(__dirname + '/dist/index.html'));
+   
+    res.sendFile(path.join(__dirname, 'publicweb', 'index.html'));
   });
   app.get('/user/*', function(req, res) {
-    res.sendFile(path.resolve(__dirname + '/dist/index.html'));
+    res.sendFile(path.resolve(__dirname + '/publicweb/index.html'));
   });
   app.get('/404', function(req, res) {
-    res.sendFile(path.resolve(__dirname + '/dist/index.html'));
+    res.sendFile(path.resolve(__dirname + '/publicweb/index.html'));
   });
   app.get('/', function(req, res) {
-    res.sendFile(path.resolve(__dirname + '/dist/index.html'));
+    res.sendFile(path.join(__dirname, 'publicweb', 'index.html'));
   });
   
   app.get('*', function(req, res) {
