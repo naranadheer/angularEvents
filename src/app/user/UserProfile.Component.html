@@ -1,0 +1,21 @@
+<div>
+    <h1>Edit Your Profile </h1>
+    <hr>
+    <div class="col-md-4">
+      <form autocomplete="off" novalidate [formGroup]="ProfileForm">
+        <div class="form-group" [ngClass]="{'error': ProfileForm.controls.firstName.touched && !validateFirstName()}" >
+          <label for="firstName">First Name:</label>
+        <em *ngIf="ProfileForm.controls.firstName.touched && ProfileForm.controls.firstName.errors?.pattern">First Name should be in string </em>
+        <em *ngIf="ProfileForm.controls.firstName.touched && ProfileForm.controls.firstName.errors?.required">Required </em>
+          <input id="firstName" formControlName="firstName"  type="text" class="form-control" placeholder="First Name..." />
+        </div>
+        <div class="form-group" [ngClass]="{'error': ProfileForm.controls.lastName.invalid}">
+          <label for="lastName">Last Name:</label>
+          <input id="lastName" formControlName="lastName" type="text"  class="form-control" placeholder="Last Name..." />
+        </div>
+  
+        <button type="submit" class="btn btn-primary" (click)="saveClick()">Save</button>
+        <button type="button" class="btn btn-default">Cancel</button>
+      </form>
+    </div>
+  </div>

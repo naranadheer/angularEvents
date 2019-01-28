@@ -1,0 +1,9 @@
+<div>
+    <div [routerLink]="['/events/find',event.id]" class="well hoverwell thumbnail">
+    <h2>{{event.name | uppercase}}</h2>
+    <div>{{event.time}}</div>
+    <div>{{event.location.address}}</div>
+    <div>{{event.location.city}},{{event.location.country}}</div>
+    
+    </div>
+</div>
